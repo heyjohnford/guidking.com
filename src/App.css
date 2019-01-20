@@ -1,23 +1,72 @@
-.app-title {
+.app-font {
   font-family: "Avenir Next", "Roboto", "Oxygen";
-  color: var(--title-color);
-  font-size: 40px;
+}
+
+.app-title {
+  color: var(--title-color-primary);
+  font-size: 45px;
+}
+
+.app-title-secondary {
+  color: var(--title-color-secondary);
 }
 
 .app-container {
   display: grid;
   margin-left: auto;
   margin-right: auto;
-  /* grid-gap: 10px; */
   grid-template-columns: repeat(2, 1fr);
-
   grid-auto-rows: minmax(100px, auto);
   max-width: 1200px;
 }
 
+.app-text {
+  color: var(--text-color-primary);
+}
+
+.app-text-secondary {
+  color: var(--text-color-secondary);
+}
+
 .app-hr {
-  border-bottom: 1px solid #D8D8D8;
+  border-bottom: 1px solid var(--highlights);
   opacity: 0.8;
+}
+
+.app-input-checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 26px;
+  height: 26px;
+}
+
+.app-input-checkbox:checked {
+  background-color: var(--title-color-secondary);
+}
+
+.app-input-checkbox:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.app-input-checkbox:checked:after {
+  display: block;
+}
+
+.app-input-checkbox:after {
+  left: 8px;
+  top: 3px;
+  width: 8px;
+  height: 14px;
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.app-btn {
+  text-shadow: 0 2px 4px rgb(34, 54, 77, 0.4);
 }
 
 @keyframes App-logo-spin {
@@ -27,4 +76,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.app-footer {
+  bottom: 4rem;
 }
