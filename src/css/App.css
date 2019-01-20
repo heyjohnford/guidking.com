@@ -20,6 +20,10 @@
   max-width: 1200px;
 }
 
+.app-logo {
+  font-size: 0;
+}
+
 .app-text {
   color: var(--text-color-primary);
 }
