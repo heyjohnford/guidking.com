@@ -1,0 +1,22 @@
+{
+    "extends": [
+        "react-app"
+    ],
+    "env": {
+        "mocha": true,
+        "commonjs": true,
+        "es6": true,
+        "node": true
+      },
+      "rules": {
+        "func-names": "off",
+        "prefer-arrow-callback": "off",
+        "require-jsdoc": "off",
+        "no-unused-expressions": "off",
+        "semi": ["error", "never"],
+        "comma-dangle": ["error", "never"],
+        "object-curly-newline": "off",
+        "global-require": "off",
+        "import/no-dynamic-require": "off"
+      }
+}
