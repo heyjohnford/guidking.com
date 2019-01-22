@@ -3,6 +3,7 @@ import Header from './Header'
 import Counter from './Counter'
 import Form from './Form'
 import Footer from './Footer'
+import { BASE_API } from '../constants'
 import '../css/App.css'
 
 class App extends Component {
@@ -16,9 +17,22 @@ class App extends Component {
 
   async componentDidMount() {
     try {
-      const guids = await (await fetch(`http://localhost:3000/?amount=1`)).json()
+      const guids = await (await fetch(`${BASE_API}?amount=1`)).json()
       this.setState({ guids })
       console.log(this.state)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  fetchGuids() {
+    return
+  }
+
+  async handleGenerateGuidsClick(e) {
+    try {
+      const guids = await (await fetch(`${BASE_API}?amount=1`)).json()
+      this.setState({ guids })
     } catch (err) {
       console.log(err)
     }
