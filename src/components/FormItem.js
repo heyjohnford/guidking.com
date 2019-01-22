@@ -1,12 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 export default (props) => {
-  const { name, checked } = props
-  const [isChecked, setIsChecked] = useState(checked)
-
-  function handleIsCheckedChange(e) {
-    setIsChecked(!isChecked)
-  }
+  const { name, checked, handleIsCheckedChange } = props
 
   return (
     <label className="block relative mb-10 pl-12" htmlFor={name}>
@@ -15,7 +10,7 @@ export default (props) => {
         id={name}
         name={name}
         type="checkbox"
-        checked={isChecked}
+        checked={checked}
         onChange={handleIsCheckedChange}
       />
       <span className="text-xl">{name}</span>
