@@ -3,41 +3,9 @@ import Header from './Header'
 import Counter from './Counter'
 import Form from './Form'
 import Footer from './Footer'
-import { BASE_API } from '../constants'
 import '../css/App.css'
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      guids: []
-    }
-  }
-
-  async componentDidMount() {
-    try {
-      const guids = await (await fetch(`${BASE_API}?amount=1`)).json()
-      this.setState({ guids })
-      console.log(this.state)
-    } catch (err) {
-      console.log(err)
-    }
-  }
-
-  fetchGuids() {
-    return
-  }
-
-  async handleGenerateGuidsClick(e) {
-    try {
-      const guids = await (await fetch(`${BASE_API}?amount=1`)).json()
-      this.setState({ guids })
-    } catch (err) {
-      console.log(err)
-    }
-  }
-
   render() {
     return (
       <div className="app-container pt-32">
