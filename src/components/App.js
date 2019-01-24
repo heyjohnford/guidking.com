@@ -8,7 +8,7 @@ import '../css/App.css'
 class App extends Component {
   render() {
     return (
-      <div className="app-container pt-32">
+      <section className="app-container pt-32">
         <div className="app-item app-item1 mr-12">
           <Header />
           <hr className="app-hr" />
@@ -22,7 +22,7 @@ class App extends Component {
           </div>
         </div>
         <Footer />
-      </div>
+      </section>
     )
   }
 }

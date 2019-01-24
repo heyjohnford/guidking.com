@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import FormItem from './FormItem'
-import { formOptions } from '../constants'
-import { BASE_API } from '../constants'
+import Guids from './Guids'
+import { formOptions, BASE_API } from '../constants'
 import helpers from '../helpers'
 
 const Form = (props) => {
@@ -61,12 +61,13 @@ const Form = (props) => {
   function formatGuids(guids = []) {
     return state.formOptions.reduce((modifiedGuids, option) => {
       const funcName = option.name.toLowerCase() + 'Pipeline'
+      const HYPHEN = formOptions[0].name
 
-      if (option.checked && option.name !== formOptions[0].name) {
+      if (option.checked && option.name !== HYPHEN) {
         modifiedGuids = helpers[funcName](modifiedGuids)
       }
 
-      if (!option.checked && option.name === formOptions[0].name) {
+      if (!option.checked && option.name === HYPHEN) {
         modifiedGuids = helpers[funcName](modifiedGuids)
       }
 
@@ -94,13 +95,12 @@ const Form = (props) => {
         </div>
         <small className="text-grey-dark"><em>**No more than 5,000 GUIDs please</em></small>
         <hr className="app-hr mt-4" />
-        <div className="app-text mt-8 mb-6">
+        <div className="app-text mt-8">
           {checkmarkOptions}
         </div>
-        <hr className="app-hr" />
+        <hr className="app-hr pt-1" />
+        <Guids guids={state.guids} formatGuids={formatGuids} />
       </div>
-      <div>{state.guids}</div>
-      <div>{formatGuids(state.guids)}</div>
       <div className="flex items-center justify-between">
         <button
           className="app-btn bg-blue text-white text-xl font-bold w-full py-6 rounded rounded-t-none hover:bg-blue-dark focus:outline-none focus:shadow-outline"

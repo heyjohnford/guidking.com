@@ -4,7 +4,7 @@ export default (props) => {
   const { name, checked, handleIsCheckedChange } = props
 
   return (
-    <label className="block relative mb-10 pl-12" htmlFor={name}>
+    <label className="block relative mb-8 pl-12" htmlFor={name}>
       <input
         className="appearance-none border rounded app-input-checkbox hover:bg-grey-lighter cursor-pointer"
         id={name}

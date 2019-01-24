@@ -73,6 +73,16 @@
   text-shadow: 0 2px 4px rgb(34, 54, 77, 0.4);
 }
 
+.app-format-guids-textarea {
+  height: 140px;
+}
+
+.app-icon-copy {
+  background: url('/guid-copy.svg') no-repeat;
+  width: 16px;
+  height: 16px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
