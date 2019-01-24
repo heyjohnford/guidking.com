@@ -5,7 +5,7 @@ export default (props) => {
   const { totalGuids } = props
 
   return (
-    <div className="app-guidcounter app-font font-semibold italic mt-32 sm:my-6 sm:text-xs">
+    <div className="app-guidcounter app-font font-semibold italic mt-32 sm:my-6 sm:text-xs sm:font-normal">
       <p className="text-grey-darker">So Far,
         <Spring
           from={{ number: totalGuids }}
