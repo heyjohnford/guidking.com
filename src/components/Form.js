@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import FormItem from './FormItem'
 import Guids from './Guids'
-import { formOptions, BASE_API } from '../constants'
-import helpers from '../helpers'
+import { formOptions } from '../constants'
+import helpers, { gofetch } from '../helpers'
 
 const Form = (props) => {
   const [state, setState] = useState({
@@ -30,7 +30,7 @@ const Form = (props) => {
     e.preventDefault()
 
     try {
-      const response = await (await fetch(`${BASE_API}?amount=${state.guidAmount}`)).json()
+      const response = await gofetch(`?amount=${state.guidAmount}`)
 
       if (!response.error) {
         setState({ ...state, guids: response })
@@ -93,7 +93,7 @@ const Form = (props) => {
             placeholder="Number of GUIDs..."
           />
         </div>
-        <small className="text-grey-dark"><em>**No more than 5,000 GUIDs please</em></small>
+        <small className="text-grey-dark"><em>**No more than 3,000 GUIDs please</em></small>
         <hr className="app-hr mt-4" />
         <div className="app-text mt-8">
           {checkmarkOptions}
