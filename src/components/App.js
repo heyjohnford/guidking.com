@@ -32,12 +32,12 @@ class App extends Component {
 
   render() {
     return (
-      <section className="app-container pt-32">
-        <div className="app-item app-item1 mr-12">
+      <section className="app-container pt-32 sm:pt-1">
+        <div className="app-item app-item1 mr-12 pl-4">
           <Header />
           <hr className="app-hr" />
-          <h1 className="app-title app-font font-semibold leading-tight mt-12 mb-10">Generate some beautiful<br />GUIDs for your project</h1>
-          <p className="app-text-secondary leading-normal w-5/6">Use GUIDs as key identifiers for your event-driven architecture or to keep track of your system’s inventory. GUIDs are great, we’re here to help you generate them.</p>
+          <h1 className="app-title app-font text-4xl sm:text-xl font-semibold leading-tight mt-12 sm:mt-6 mb-10 sm:mb-4">Generate some beautiful<br />GUIDs for your project</h1>
+          <p className="app-text-secondary leading-normal w-5/6 sm:hidden">Use GUIDs as key identifiers for your event-driven architecture or to keep track of your system’s inventory. GUIDs are great, we’re here to help you generate them.</p>
           <Counter totalGuids={this.state.totalGuids} />
         </div>
         <div className="app-item app-item2">

@@ -6,7 +6,7 @@ export default (props) => {
     <header>
       <a className="app-logo inline-flex mb-5" href="/">
         Home
-        <Logo />
+        <Logo className="app-logo-svg" />
       </a>
     </header>
   )

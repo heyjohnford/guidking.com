@@ -496,34 +496,6 @@ table {
   border-collapse: collapse;
 }
 
-.container {
-  width: 100%;
-}
-
-@media (min-width: 576px) {
-  .container {
-    max-width: 576px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    max-width: 992px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1200px;
-  }
-}
-
 .list-reset {
   list-style: none;
   padding: 0;
@@ -6145,7 +6117,7 @@ table {
   z-index: auto;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 0) and (max-width: 1080px) {
   .sm\:list-reset {
     list-style: none;
     padding: 0;
