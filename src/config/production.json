@@ -1,1 +1,11 @@
-{}
+{
+  "appName": "guidking.com",
+  "app": {},
+  "port": 8000,
+  "api": {
+    "host": "guidking-api-service"
+  },
+  "socket": {
+    "host": "guidking-api-service"
+  }
+}

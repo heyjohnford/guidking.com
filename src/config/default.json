@@ -1,7 +1,7 @@
 {
   "appName": "guidking.com",
   "app": {},
-  "port": 3000,
+  "port": 8000,
   "api": {
     "protocol": "http://",
     "host": "localhost",
