@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  node-server:
+    container_name: guidking.com
+    build: .
+    command: 'sh -c "yarn && yarn start"'
+    image: node:11.5-alpine
+    environment:
+      - PORT=8000
+    ports:
+      - 8000:8000
+    working_dir: /app
+    tty: true
+    restart: always
