@@ -39,7 +39,7 @@ export default (props) => {
       </button>
       <textarea
         ref={textareaRef}
-        className="app-format-guids-textarea w-full p-2 border border-grey-light"
+        className="app-format-guids-textarea w-full p-2 border border-grey-light sm:text-sm"
         value={guids}
         readOnly
       />

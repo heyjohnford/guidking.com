@@ -75,7 +75,7 @@ const Form = (props) => {
     }, guids)
   }
 
-  const guidMsg = <small className="text-grey-dark sm:float-right sm:font-normal"><em>**No more than 3,000 GUIDs please</em></small>
+  const guidMsg = <small className="sm:float-right sm:font-normal"><em>**No more than 3,000 GUIDs please</em></small>
 
   return (
     <form className="app-form bg-white shadow-md rounded" onSubmit={handleGenerateGuidsSubmit}>
@@ -83,7 +83,7 @@ const Form = (props) => {
         <h2 className="app-title-secondary text-lg mb-6 sm:text-sm">Go Ahead, Get Your GUID On</h2>
         <div className="mb-3">
           <label className="block text-grey-darker text-sm font-bold mb-2" htmlFor="amount">
-            Amount <span className="md:hidden">{guidMsg}</span>
+            Amount <span className="md:hidden sm:text-blue-darker">{guidMsg}</span>
           </label>
           <input
             className="bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darkest leading-loose focus:outline-none focus:bg-white focus:border-blue"
@@ -95,7 +95,7 @@ const Form = (props) => {
             placeholder="Number of GUIDs..."
           />
         </div>
-        <span className="sm:hidden">{guidMsg}</span>
+        <span className="text-grey-dark sm:hidden">{guidMsg}</span>
         <hr className="app-hr mt-4 sm:hidden" />
         <div className="app-text mt-8">
           {checkmarkOptions}
