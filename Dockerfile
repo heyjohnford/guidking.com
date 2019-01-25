@@ -6,11 +6,12 @@ FROM node:11.5-alpine
 COPY . /app
 WORKDIR /app
 
-RUN yarn
+RUN yarn install
+# RUN yarn install --production
 # RUN npm install --production
 
-ENV NODE_ENV production
+# ENV NODE_ENV production
 
 EXPOSE 8000
 
-CMD ["npm", "start"]
+CMD ["yarn", "start"]
