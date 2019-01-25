@@ -17,8 +17,12 @@ class App extends Component {
   }
 
   async initialGuidTotal() {
-    const response = await gofetch('total')
-    this.setState({ totalGuids: response.total })
+    try {
+      const response = await gofetch('total')
+      this.setState({ totalGuids: response.total })
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   subscribeToCounter() {
