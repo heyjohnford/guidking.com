@@ -19,14 +19,25 @@ class App extends Component {
   async initialGuidTotal() {
     try {
       const response = await gofetch('total')
+
+      if (response.error) {
+        return
+      }
+
       this.setState({ totalGuids: response.total })
     } catch (err) {
-      console.log(err)
+      console.log('Client error fetching /total: ', err)
     }
   }
 
   subscribeToCounter() {
-    clientSocket.on('counter', (data) => this.setState({ totalGuids: data.total }))
+    try {
+      clientSocket.on('counter', (data) => {
+        this.setState({ totalGuids: data.total })
+      })
+    } catch (err) {
+      console.log('Error occurred fetching socket: ', err)
+    }
   }
 
   async componentDidMount() {
