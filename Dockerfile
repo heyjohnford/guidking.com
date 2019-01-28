@@ -1,17 +1,14 @@
-FROM node:11.5-alpine
-
-# RUN addgroup -S guid-king && adduser -S guid-king -G guid-king
-# USER guid-king
+FROM node:11.5-alpine as builder
 
 COPY . /app
 WORKDIR /app
 
-RUN yarn install
-# RUN yarn install --production
-# RUN npm install --production
+RUN yarn install --production && yarn build
 
-# ENV NODE_ENV production
+FROM nginx:alpine
 
-EXPOSE 8000
+COPY --from=builder /app/build /usr/share/nginx/html
 
-CMD ["yarn", "start"]
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
