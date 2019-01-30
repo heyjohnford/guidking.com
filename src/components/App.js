@@ -8,7 +8,7 @@ import { SOCKET_API } from '../constants'
 import socket from 'socket.io-client'
 import '../css/App.css'
 
-const  clientSocket = socket(SOCKET_API + 'total')
+const  clientSocket = socket(SOCKET_API + 'counter')
 
 class App extends Component {
   constructor(props) {
@@ -36,7 +36,7 @@ class App extends Component {
         this.setState({ totalGuids: data.total })
       })
     } catch (err) {
-      console.log('Error occurred fetching socket: ', err)
+      console.log('Error occurred fetching socket [counter] : ', err)
     }
   }
 
