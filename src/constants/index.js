@@ -1,9 +1,9 @@
 import config from '../config'
 
-const { protocol, host, port } = config.api
+const { url } = config.api
 
-export const BASE_API = `${protocol}${host}:${port}/`
-export const SOCKET_API = `${protocol}${host}:${port}/`
+export const BASE_API = url
+export const SOCKET_API = url
 export const COPY_TEXT = 'Copy to clipboard'
 export const COPY_TEXT_COMPLETED = 'Copied!'
 

@@ -3,9 +3,6 @@
   "app": {},
   "port": 8000,
   "api": {
-    "host": "guidking-api-service"
-  },
-  "socket": {
-    "host": "guidking-api-service"
+    "url": "https://guidking-api-service/api/"
   }
 }
