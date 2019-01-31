@@ -3,7 +3,7 @@ FROM node:11.5-alpine as builder
 COPY . /app
 WORKDIR /app
 
-RUN yarn install --production && yarn build
+RUN npm install --production && npm run build
 
 FROM nginx:alpine
 
