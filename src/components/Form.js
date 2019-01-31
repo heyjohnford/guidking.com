@@ -8,7 +8,8 @@ const Form = (props) => {
   const [state, setState] = useState({
     guids: [],
     guidAmount: 1,
-    formOptions: formOptions || []
+    formOptions: formOptions || [],
+    isFetchingGuids: false
   })
   const checkmarkOptions = state.formOptions.map(o => (
     <FormItem
@@ -26,19 +27,23 @@ const Form = (props) => {
     setState({ ...state, formOptions: options })
   }
 
+  function fetchingGuids(bool = false) {
+    setState({ ...state, isFetchingGuids: bool })
+  }
+
   async function handleGenerateGuidsSubmit(e) {
     e.preventDefault()
+    fetchingGuids(true)
 
     try {
       const response = await gofetch(`?amount=${state.guidAmount}`)
 
       if (!response.error) {
-        setState({ ...state, guids: response })
+        setState({ ...state, guids: response, isFetchingGuids: false })
         return
       }
 
       reportError(response)
-      console.log(response)
     } catch (err) {
       console.log(err)
     }
@@ -105,12 +110,12 @@ const Form = (props) => {
       </div>
       <div className="flex items-center justify-between">
         <button
-          className="app-btn bg-blue text-white text-xl font-bold w-full py-6 rounded rounded-t-none hover:bg-blue-dark focus:outline-none focus:shadow-outline"
+          className="app-btn bg-blue text-white text-xl font-bold w-full py-6 rounded rounded-t-none hover:bg-blue-dark focus:outline-none focus:shadow-outline relative"
           type="button"
           aria-label="Generate"
           onClick={handleGenerateGuidsSubmit}
         >
-          Generate GUIDs
+          Generate GUIDs {state.isFetchingGuids && <i className="app-icon app-icon-waiting"></i>}
         </button>
       </div>
     </form>

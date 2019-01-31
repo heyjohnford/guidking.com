@@ -73,6 +73,15 @@
   height: 16px;
 }
 
+.app-icon-waiting {
+  background: url('/waiting.svg') no-repeat;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  position: absolute;
+  margin-left: 5px;
+  margin-top: 4px;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
