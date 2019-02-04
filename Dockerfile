@@ -1,4 +1,4 @@
-FROM node:11.5-alpine as builder
+FROM node:11.8-alpine as builder
 
 COPY . /app
 WORKDIR /app
@@ -9,6 +9,6 @@ FROM nginx:alpine
 
 COPY --from=builder /app/build /usr/share/nginx/html
 
-EXPOSE 80
+EXPOSE 8000
 
 CMD ["nginx", "-g", "daemon off;"]

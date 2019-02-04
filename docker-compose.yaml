@@ -1,15 +1,15 @@
 version: '3.3'
 services:
-  node-server:
+   guidking-com-node:
     container_name: guidking.com
     build: .
     command: 'sh -c "npm install && npm start"'
-    image: node:11.5-alpine
+    image: dev-guidking.com
+    working_dir: /app
     environment:
       - NODE_ENV=development
       - PORT=8000
     ports:
       - 8000:8000
-    working_dir: /app
     tty: true
-    restart: always
+    # restart: always
