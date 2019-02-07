@@ -1,6 +1,6 @@
 {
   "name": "guidking.com",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "react": "16.8.0-alpha.1",
@@ -14,7 +14,8 @@
     "tailwind:css": "tailwind build src/assets/tailwind.css -c src/assets/tailwind.js -o src/css/tailwind.css",
     "start": "npm run tailwind:css && react-scripts start",
     "build": "npm run tailwind:css && react-scripts build",
-    "build:dev": "npm run tailwind:css && docker build -f Dockerfile.dev -t dev-guidking.com . && docker-compose up",
+    "build:dev": "npm run tailwind:css && docker build -f Dockerfile.dev -t dev-guidking-com . && docker-compose up",
+    "build:prod": "npm run tailwind:css && docker build -t guidking-com .",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
