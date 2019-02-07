@@ -3,6 +3,6 @@
   "app": {},
   "port": 8000,
   "api": {
-    "url": "https://guidking.com/api/"
+    "url": "https://api.guidking.com/"
   }
 }

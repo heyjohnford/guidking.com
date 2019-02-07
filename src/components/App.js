@@ -20,7 +20,7 @@ class App extends Component {
     try {
       const response = await gofetch('total')
 
-      if (response.error) {
+      if (response == null || response.error) {
         return
       }
 
