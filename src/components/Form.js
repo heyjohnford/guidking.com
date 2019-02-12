@@ -100,7 +100,7 @@ const Form = (props) => {
             placeholder="Number of GUIDs..."
           />
         </div>
-        <span className="text-grey-dark sm:hidden">{guidMsg}</span>
+        <span className="text-grey-darker sm:hidden">{guidMsg}</span>
         <hr className="app-hr mt-4 sm:hidden" />
         <div className="app-text mt-8">
           {checkmarkOptions}
