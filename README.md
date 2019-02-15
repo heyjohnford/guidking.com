@@ -1,3 +1,29 @@
+# guidking.com
+
+Front-end website that generates GUID(s) for a user. The website focuses on being useful, accessible and performant.
+
+To get started developing on *guidking.com* open up a terminal and run:
+
+`npm start`
+
+## CSS
+
+Project uses [Tailwind CSS](https://tailwindcss.com/docs/what-is-tailwind/)
+
+## Unit Tests
+
+Unit test can be ran with the following:
+
+`npm test`
+
+## Production
+
+To prepare a production ready docker image:
+
+`npm run build:prod`
+
+## Extra Stuff
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
