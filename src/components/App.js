@@ -54,13 +54,14 @@ class App extends Component {
           <h1 className="app-title app-font text-4xl sm:text-xl font-semibold leading-tight mt-12 sm:my-4 mb-10">Generate some beautiful<br />GUIDs for your project</h1>
           <p className="app-text-secondary leading-normal w-5/6 sm:hidden">Use GUIDs as key identifiers for your event-driven architecture or to keep track of your system’s inventory. GUIDs are great, we’re here to help you generate them.</p>
           <Counter totalGuids={this.state.totalGuids} />
+          <Footer hiddenClassName="sm:hidden" />
         </div>
         <div className="app-item app-item2 sm:px-4">
           <div className="w-full max-w-sm">
             <Form />
           </div>
+          <Footer hiddenClassName="md:hidden" />
         </div>
-        <Footer />
       </section>
     )
   }
